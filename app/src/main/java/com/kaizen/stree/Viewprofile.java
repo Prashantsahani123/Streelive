@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,6 +15,10 @@ public class Viewprofile extends AppCompatActivity {
 
     ImageView back,ivNewCallButton,ivNewMessage,ivWhatsApp,ivNewMail;
     TextView memn , memclu, clas , emaill , mobil,comp_N, webs, facebkpage,Youtub,BusinessB;
+
+
+    LinearLayout Mb,Em,AofB,Comp_N,websit,facebook, Youtube, BussinessBrief;
+
 
 
     @Override
@@ -43,6 +48,19 @@ public class Viewprofile extends AppCompatActivity {
         BusinessB = findViewById(R.id.BusinessB);
 
 
+
+        Mb = findViewById(R.id.Mb);
+        Em = findViewById(R.id.Em);
+        AofB = findViewById(R.id.AofB);
+        websit = findViewById(R.id.websit);
+        Comp_N = findViewById(R.id.Comp_N);
+        facebook = findViewById(R.id.facebook);
+
+        Youtube = findViewById(R.id.Youtube);
+        BussinessBrief = findViewById(R.id.BussinessBrief);
+
+
+
 try {
     String nam = getIntent().getExtras().getString("name");
     String clbn = getIntent().getExtras().getString("clubn");
@@ -59,16 +77,84 @@ try {
 
     String Business_Brief = getIntent().getExtras().getString("BusinessB");
 
+
+
     memn.setText(nam);
     memclu.setText(clbn);
-    mobil.setText(mob);
-    emaill.setText(eml);
-    clas.setText(cls);
-    comp_N.setText(cmp_n);
-    webs.setText(websitee);
-    facebkpage.setText(faceb);
-    Youtub.setText(youtube);
-    BusinessB.setText(Business_Brief);
+
+    if(mob.length()>1)
+    {
+        mobil.setText(mob);
+        Mb.setVisibility(View.VISIBLE);
+    }else {
+        Mb.setVisibility(View.GONE);
+    }
+
+    if(eml.length()>1)
+    {
+        emaill.setText(eml);
+        Em.setVisibility(View.VISIBLE);
+    }else {
+        Em.setVisibility(View.GONE);
+    }
+
+    if(cls.length()>1)
+    {
+        clas.setText(cls);
+        AofB.setVisibility(View.VISIBLE);
+    }else {
+        AofB.setVisibility(View.GONE);
+    }
+
+
+
+    if(cmp_n.length()>1)
+    {
+        comp_N.setText(cmp_n);
+
+        Comp_N.setVisibility(View.VISIBLE);
+    }
+    else {
+        Comp_N.setVisibility(View.GONE);
+    }
+
+    if(websitee.length()>1) {
+        webs.setText(websitee);
+
+        websit.setVisibility(View.VISIBLE);
+    }
+        else {
+        websit.setVisibility(View.GONE);
+    }
+
+
+        if(faceb.length()>1) {
+            facebkpage.setText(faceb);
+            facebook.setVisibility(View.VISIBLE);
+        }
+        else {
+            facebook.setVisibility(View.GONE);
+            }
+
+
+        if(youtube.length()>1) {
+            Youtub.setText(youtube);
+            Youtube.setVisibility(View.VISIBLE);
+        }else {
+            Youtube.setVisibility(View.GONE);
+    }
+
+    if(Business_Brief.length()>1)
+    {
+        BusinessB.setText(Business_Brief);
+        BussinessBrief.setVisibility(View.VISIBLE);
+
+    }else {
+        BussinessBrief.setVisibility(View.GONE);
+    }
+
+
+
 
 }
 catch (Exception e)
