@@ -77,6 +77,9 @@ public class Directory extends AppCompatActivity {
     Databasehelper databasehelper= null;
     ProgressDialog progressDialog ;
 
+    String loc = "";
+    String locv = "";
+
 
 
     @Override
