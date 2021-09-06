@@ -80,6 +80,7 @@ public class Directory extends AppCompatActivity {
     String loc = "";
     String locv = "";
     String locvv = "";
+    String locvve = "";
 
 
 
